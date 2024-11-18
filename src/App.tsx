@@ -1,13 +1,21 @@
-import { Button } from './components/ui/button'
-import './App.css'
 
+import './App.css'
+import { BrowserRouter,Route, Routes } from 'react-router-dom'
+import Layout from './components/layout'
+import { ThemeProvider } from './context/theme-provider'
 function App() {
  
 
   return (
-    <>
-      <Button>Click me</Button>
-    </>
+   <BrowserRouter>
+   <ThemeProvider defaultTheme='dark'>
+   <Layout>
+    <Routes>
+    <Route path='/' element={''} />
+    </Routes>
+   </Layout>
+   </ThemeProvider>
+   </BrowserRouter> 
   )
 }
 
