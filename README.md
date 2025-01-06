@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+# Climato
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Climato** is a weather web application that provides real-time weather updates based on the user's location. It includes features such as temperature graphs, a five-day forecast, sunrise and sunset times, wind direction, and humidity details. Users can add/remove favorite cities, search for weather in different locations, and toggle between dark and light modes for a personalized experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Real-time weather updates based on the user's location.
+- Temperature graph for the current day.
+- Five-day weather forecast.
+- Sunrise and sunset times.
+- Wind direction and humidity details.
+- Add and remove favorite cities.
+- Search for weather in other locations.
+- Toggle between dark and light modes.
+- **Search Bar**: Contains search history and suggestions, making it easier to find past or new locations quickly.
+- **Favorites List**: Displays a list of favorite cities for quick access to their weather updates.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Built with a combination of modern tools and libraries:
 
-- Configure the top-level `parserOptions` property like this:
+- React
+- Vite
+- TypeScript
+- TailwindCSS
+- Date-fns
+- ShadCN UI
+- Lucide-react
+- Tanstack Query
+- React Router DOM
+- Recharts
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Weather API
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The weather data is sourced from the [OpenWeather API](https://openweathermap.org/), providing accurate and up-to-date information on weather conditions.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Website
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Visit here for better experience [Climato Website](https://climato.onrender.com/).
