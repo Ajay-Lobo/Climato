@@ -1,5 +1,5 @@
 {
-  "homepage": "https://<Username>.github.io/<Repository-name>",
+  "homepage": "https://Ajay-Lobo.github.io/Climato",
   "name": "climato",
   "private": true,
   "version": "0.0.0",
@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build" ,
     "lint": "eslint .",
     "preview": "vite preview"
   },
