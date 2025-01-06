@@ -52,12 +52,9 @@ class WeatherAPI {
     return this.fetchWeatherData<ReverseGeocodeData[]>(url);
   }
 
-  async searchLocations({
-    query:string
-  }: Coordinates): Promise<ReverseGeocodeData[]> {
+  async searchLocations(query: string): Promise<ReverseGeocodeData[]> {
     const url = this.createURL(`${API_CONFIG.GEO}/direct`, {
-      lat: lat.toString(),
-      lon: lon.toString(),
+      q: query,
       limit: 5,
     });
     return this.fetchWeatherData<ReverseGeocodeData[]>(url);

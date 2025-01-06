@@ -6,6 +6,7 @@ export const WEATHER_KEYS = {
   weather: (coords: Coordinates) => ["weather", coords] as const,
   forecast: (coordinates: Coordinates) => ["forecast", coordinates] as const,
     reverseGeocode: (coordinates: Coordinates) => ["reverseGeocode", coordinates] as const,
+    search:(query:string) => ["location-search",query] as const,
 } as const;
 
 export function useWeatherQuery(coordinates: Coordinates | null) {
@@ -32,5 +33,13 @@ export function useReverseGeocodeQuery(coordinates: Coordinates | null) {
     queryFn: () =>
       coordinates ? weatherAPI.reverseGeocode(coordinates) : null,
     enabled: !!coordinates,
+  });
+}
+
+export function useLocationSearch(query: string) {
+  return useQuery({
+    queryKey: WEATHER_KEYS.search(query),
+    queryFn: () => weatherAPI.searchLocations(query) ,
+    enabled:query.length > 2,
   });
 }
