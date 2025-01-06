@@ -12,7 +12,17 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
       </main>
       <footer className="border-t backdrop-blur py-12 supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 text-center text-gray-200">
-          <p>© {new Date().getFullYear()}</p>
+        <p>
+  <span
+    className="text-blue-400 cursor-pointer"
+    onClick={() => {
+      window.location.href = "https://ajay-lobo.github.io/Portfolio/";
+    }}
+  >
+    @Ajay
+  </span>{" "}
+  © {new Date().getFullYear()}
+</p>
         </div>
       </footer>
     </div>
